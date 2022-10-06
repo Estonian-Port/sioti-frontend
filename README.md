@@ -1,2 +1,2 @@
-# siote-frontend
-Sistema de IOT para Empresas
+# sioti-frontend
+Sistema de IOT para Industrias
