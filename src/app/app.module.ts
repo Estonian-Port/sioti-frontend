@@ -11,6 +11,7 @@ import { HomeComponent } from './layout/home/home.component';
 import { McuComponent } from './layout/mcu/mcu.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { OnOffComponent } from './layout/on-off/on-off.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: 'mcu',
     component: McuComponent,
   },
+  {
+    path: 'onOff',
+    component: OnOffComponent,
+  },
 ];
 
 @NgModule({
@@ -30,7 +35,8 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    McuComponent
+    McuComponent,
+    OnOffComponent
   ],
   imports: [
     BrowserModule,

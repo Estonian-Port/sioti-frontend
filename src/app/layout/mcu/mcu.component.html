@@ -1,1 +1,9 @@
-MCU
+<div class="container">
+    <div *ngFor="let mcu of mcus">
+        <ul>
+            <li>id: {{mcu.id}}</li>
+            <li>nombre: {{mcu.nombre}}</li>
+            <li><a href="/onOff" class="btn btn-primary">Ver horarios de encendido y apagado</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>MCU: {{mcu.nombre}}</h1>
+
+    <div *ngFor="let onOff of onOffs">
+        <ul>
+            <li>id: {{onOff.id}}</li>
+            <li>action: {{onOff.action}}</li>
+            <li>hora: {{onOff.localDateTime}}</li>
+        </ul>
+    </div>
+</div>
