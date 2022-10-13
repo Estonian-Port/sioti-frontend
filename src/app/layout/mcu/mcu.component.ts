@@ -18,7 +18,11 @@ export class McuComponent implements OnInit {
   mcus: Array<Mcu> = []
   errors = []
   
-  constructor(public mcuService: McuService, private router: Router) { }
+  constructor(public mcuService: McuService, public router: Router) { }
+
+  verHorarios(mcu: Mcu) {
+    this.router.navigate(['/onOff', mcu.id])
+  }
 
   async ngOnInit(): Promise<void> {
      try {

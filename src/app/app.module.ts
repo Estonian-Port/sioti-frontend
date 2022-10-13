@@ -24,7 +24,7 @@ const routes: Routes = [
     component: McuComponent,
   },
   {
-    path: 'onOff',
+    path: 'onOff/:id',
     component: OnOffComponent,
   },
 ];

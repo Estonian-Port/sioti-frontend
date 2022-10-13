@@ -12,9 +12,10 @@ export class OnOffService {
   
   constructor(private httpClient: HttpClient) { }
 
-    async getAllOnOffByMcu(mcu: Mcu) {
-      const onOffs$ = this.httpClient.get<OnOffJSON[]>(REST_SERVER_URL + '/getAllOnOffByMcu/' + mcu.id)
-      const onOffs = await lastValueFrom(onOffs$)
-      return onOffs.map((onoffJSON) => OnOff.fromJson(onoffJSON))
+  async getAllOnOffByMcu(mcu: Mcu) {
+    const onOffs$ = this.httpClient.get<OnOffJSON[]>(REST_SERVER_URL + '/getAllOnOffByMcu/' + mcu.id)
+    const onOffs = await lastValueFrom(onOffs$)
+    return onOffs.map((onoffJSON) => OnOff.fromJson(onoffJSON))
   }
+
 }

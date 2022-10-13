@@ -11,9 +11,16 @@ export class McuService {
 
   constructor(private httpClient: HttpClient) { }
   
-    async getAllMcus() {
-      const mcus$ = this.httpClient.get<McuJSON[]>(REST_SERVER_URL + '/getAllMcu')
-      const mcus = await lastValueFrom(mcus$)
-      return mcus.map((mcuJSON) => Mcu.fromJson(mcuJSON))
+  async getAllMcus() {
+    const mcus$ = this.httpClient.get<McuJSON[]>(REST_SERVER_URL + '/getAllMcu')
+    const mcus = await lastValueFrom(mcus$)
+    return mcus.map((mcuJSON) => Mcu.fromJson(mcuJSON))
   }
+
+  async getMcuById(idMcu: number) {
+    const mcu$ = this.httpClient.get<McuJSON>(REST_SERVER_URL + '/findMcu/' + idMcu)
+    const mcuJson = await lastValueFrom(mcu$)
+    return mcuJson ? Mcu.fromJson(mcuJson) : new Mcu(1, "test")
+  }
+
 }
