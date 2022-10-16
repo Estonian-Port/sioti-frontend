@@ -3,9 +3,8 @@
 
     <div *ngFor="let onOff of onOffs">
         <ul>
-            <li>id: {{onOff.id}}</li>
-            <li>action: {{onOff.action}}</li>
-            <li>hora: {{onOff.localDateTime}}</li>
+            <li>action: {{onOff.action | encendidoApagado}}</li>
+            <li>hora: {{onOff.localDateTime | date:"dd/MM/YYYY HH:mm"}}</li>
         </ul>
     </div>
 </div>

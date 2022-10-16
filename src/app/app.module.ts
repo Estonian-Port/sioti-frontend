@@ -12,6 +12,7 @@ import { McuComponent } from './layout/mcu/mcu.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { OnOffComponent } from './layout/on-off/on-off.component';
+import { EncendidoApagadoPipe } from './shared/pipe/encendidoApagado/encendido-apagado.pipe';
 
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
     FooterComponent,
     HomeComponent,
     McuComponent,
-    OnOffComponent
+    OnOffComponent,
+    EncendidoApagadoPipe
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@ export class OnOffComponent implements OnInit {
 
   onOffs: Array<OnOff> = []
   errors = []
-  mcu: Mcu = new Mcu(0, "")
+  mcu: Mcu = new Mcu(0, "", false)
 
   constructor(public onOffService: OnOffService, public mcuService: McuService, private router: Router, private route: ActivatedRoute) { }
  

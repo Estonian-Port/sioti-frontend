@@ -1,10 +1,18 @@
 <div class="container">
     <div *ngFor="let mcu of mcus">
         <ul>
-            <li>id: {{mcu.id}}</li>
-            <li>nombre: {{mcu.nombre}}</li>
-            <li><button type="button" class="btn btn-primary" (click)="verHorarios(mcu)">Ver horarios de encendido y
+            <div> id: {{mcu.id}} </div>
+            <div> nombre: {{mcu.nombre}} </div>
+            <div> estado: {{mcu.estado | encendidoApagado}}</div>
+            <div> Tiempo encendido: {{tiempo | date:"HH:mm"}}</div>
+            <div>
+                <button type="button" class="btn btn-success" (click)="setOnOff(true, mcu)">Prender</button>
+                <button type="button" class="btn btn-danger" (click)="setOnOff(false, mcu)">Apagar</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" (click)="verHorarios(mcu)">Ver horarios de encendido y
                     apagado</button>
+            </div>
         </ul>
     </div>
 </div>
