@@ -11,7 +11,7 @@ import { formatDate, Time } from '@angular/common';
 export class McuService {
 
   async getTiempoEncendido(mcu: Mcu) {
-    const tiempoEncendido$ = this.httpClient.get<Date>(REST_SERVER_URL + '/getTiempoEncendido/' + mcu.id)
+    const tiempoEncendido$ = this.httpClient.get<number>(REST_SERVER_URL + '/getTiempoEncendido/' + mcu.id)
     const tiempoEncendido = await lastValueFrom(tiempoEncendido$)
     return tiempoEncendido
   }
