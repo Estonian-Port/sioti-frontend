@@ -3,7 +3,7 @@ import { Mcu, McuJSON } from 'src/app/model/mcu/mcu';
 import { HttpClient } from '@angular/common/http';
 import { REST_MCU_URL, REST_SERVER_URL } from '../configuration/configuration.service';
 import { lastValueFrom } from 'rxjs';
-import { Time } from '@angular/common';
+import { formatDate, Time } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,9 @@ export class McuService {
   async getMcuById(idMcu: number) {
     const mcu$ = this.httpClient.get<McuJSON>(REST_SERVER_URL + '/findMcu/' + idMcu)
     const mcuJson = await lastValueFrom(mcu$)
-    return mcuJson ? Mcu.fromJson(mcuJson) : new Mcu(1, "test", false)
+    const currentDate = new Date();
+    
+    return mcuJson ? Mcu.fromJson(mcuJson) : new Mcu(1, "test", false, currentDate)
   }
 
 }

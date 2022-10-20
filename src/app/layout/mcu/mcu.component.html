@@ -1,13 +1,17 @@
 <div class="container">
     <div *ngFor="let mcu of mcus">
         <ul>
-            <div> id: {{mcu.id}} </div>
-            <div> nombre: {{mcu.nombre}} </div>
-            <div> estado: {{mcu.estado | encendidoApagado}}</div>
-            <div> Tiempo encendido: {{tiempo | date:"HH:mm"}}</div>
-            <div>
+            <div> Nombre: {{mcu.nombre}} </div>
+            <div style="text-align:start;">
+                <div style="display:inline;"> Estado: </div>
+                <div style="display:inline;" [ngStyle]="{'color': mcu.estado ? green : red }">
+                    {{mcu.estado | encendidoApagado}}
+                </div>
+            </div>
+            <div> Tiempo encendido: {{mcu.tiempo| date:"HH:mm"}}</div>
+            <div class="my-2">
                 <button type="button" class="btn btn-success" (click)="setOnOff(true, mcu)">Prender</button>
-                <button type="button" class="btn btn-danger" (click)="setOnOff(false, mcu)">Apagar</button>
+                <button type="button" class="btn btn-danger mx-2" (click)="setOnOff(false, mcu)">Apagar</button>
             </div>
             <div>
                 <button type="button" class="btn btn-primary" (click)="verHorarios(mcu)">Ver horarios de encendido y
@@ -16,3 +20,5 @@
         </ul>
     </div>
 </div>
+
+{{counter | date:'HH:mm:ss'}}
